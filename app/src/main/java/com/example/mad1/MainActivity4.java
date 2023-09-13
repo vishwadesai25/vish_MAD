@@ -20,7 +20,6 @@ public class MainActivity4 extends AppCompatActivity {
     private EditText mEditTextNumber2;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +37,13 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View v) {
                 if (mEditTextNumber1.getText().toString().equals("")
                         || mEditTextNumber2.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity3.this, "Please insert numbers", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity4.this, "Please insert numbers", Toast.LENGTH_SHORT).show();
                 } else {
 
                     int number1 = Integer.parseInt(mEditTextNumber1.getText().toString());
                     int number2 = Integer.parseInt(mEditTextNumber2.getText().toString());
 
-                    Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                    Intent intent = new Intent(MainActivity4.this, MainActivity3.class);
                     intent.putExtra("number1", number1);
                     intent.putExtra("number2", number2);
                     startActivityForResult(intent, 1);
@@ -53,9 +52,8 @@ public class MainActivity4 extends AppCompatActivity {
         });
     }
 
-
     private void openNewActivity() {
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 
@@ -72,4 +70,5 @@ public class MainActivity4 extends AppCompatActivity {
                 mTextViewResult.setText("Nothing selected");
             }
         }
+    }
 }
